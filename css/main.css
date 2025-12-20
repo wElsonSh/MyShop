@@ -107,21 +107,12 @@ li {
 .sideBar .sideBar_container .sideBar_nav {
   width: 100%;
   height: 100%;
-}
-.sideBar .sideBar_container .sideBar_nav .sideBar_nav_list1 {
-  width: 100%;
-  height: fit-content;
   display: flex;
   flex-direction: column;
-  align-items: start;
-  gap: 1rem;
+  align-items: center;
+  gap: 2rem;
 }
-.sideBar .sideBar_container .sideBar_nav .sideBar_nav_list1 h3 {
-  color: #111;
-  font-family: "Roboto Condensed", sans-serif;
-  line-height: 2rem;
-}
-.sideBar .sideBar_container .sideBar_nav .sideBar_nav_list1 .sideBar_nav_list1_item {
+.sideBar .sideBar_container .sideBar_nav .sideBar_nav_filter_all_input_container {
   width: 100%;
   height: fit-content;
   display: flex;
@@ -131,9 +122,79 @@ li {
   box-sizing: border-box;
   cursor: pointer;
 }
-.sideBar .sideBar_container .sideBar_nav .sideBar_nav_list1 .sideBar_nav_list1_item p {
+.sideBar .sideBar_container .sideBar_nav .sideBar_nav_filter_all_input_container p {
   font-family: "Roboto Condensed", sans-serif;
   cursor: pointer;
+}
+.sideBar .sideBar_container .sideBar_nav .sideBar_nav_filter_all_input_container .only_all {
+  pointer-events: none;
+}
+.sideBar .sideBar_container .sideBar_nav .sideBar_nav_filter_all_input_container .sideBar_nav_filter_all_input {
+  appearance: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.sideBar .sideBar_container .sideBar_nav .sideBar_nav_filter_all_input_container .sideBar_nav_filter_all_input::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+.sideBar .sideBar_container .sideBar_nav .sideBar_nav_filter_all_input_container .sideBar_nav_filter_all_input:checked::before {
+  background-color: #111;
+  border: 2px solid #111;
+}
+.sideBar .sideBar_container .sideBar_nav .sideBar_nav_list {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+}
+.sideBar .sideBar_container .sideBar_nav .sideBar_nav_list h3 {
+  color: #111;
+  font-family: "Roboto Condensed", sans-serif;
+  line-height: 2rem;
+}
+.sideBar .sideBar_container .sideBar_nav .sideBar_nav_list .sideBar_nav_list_item {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-left: 1rem;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.sideBar .sideBar_container .sideBar_nav .sideBar_nav_list .sideBar_nav_list_item p {
+  font-family: "Roboto Condensed", sans-serif;
+  cursor: pointer;
+}
+.sideBar .sideBar_container .sideBar_nav .sideBar_nav_list .sideBar_nav_list_item .filter_input {
+  appearance: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.sideBar .sideBar_container .sideBar_nav .sideBar_nav_list .sideBar_nav_list_item .filter_input::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+.sideBar .sideBar_container .sideBar_nav .sideBar_nav_list .sideBar_nav_list_item .filter_input:checked::before {
+  background-color: #111;
+  border: 2px solid #111;
 }
 
 /*# sourceMappingURL=main.css.map */

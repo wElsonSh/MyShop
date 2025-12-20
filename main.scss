@@ -120,8 +120,59 @@ li {
         .sideBar_nav {
             width: 100%;
             height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
 
-            .sideBar_nav_list1 {
+            .sideBar_nav_filter_all_input_container {
+                width: 100%;
+                height: fit-content;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                padding-left: 1rem;
+                box-sizing: border-box;
+                cursor: pointer;
+
+                p {
+                    font-family: "Roboto Condensed", sans-serif;
+                    cursor: pointer;
+                }
+
+                .only_all {
+                    pointer-events: none;
+                }
+
+                .sideBar_nav_filter_all_input {
+                    appearance: none;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        width: 18px;
+                        height: 18px;
+                        border: 2px solid #ccc;
+                        border-radius: 4px;
+                        transition: all .2s ease;
+                    }
+
+
+                    &:checked {
+                        &::before {
+                            background-color: $black;
+                            border: 2px solid $black;
+                        }
+                    }
+
+                }
+            }
+
+            .sideBar_nav_list {
                 width: 100%;
                 height: fit-content;
                 display: flex;
@@ -135,7 +186,7 @@ li {
                     line-height: 2rem;
                 }
 
-                .sideBar_nav_list1_item {
+                .sideBar_nav_list_item {
                     width: 100%;
                     height: fit-content;
                     display: flex;
@@ -148,6 +199,32 @@ li {
                     p {
                         font-family: "Roboto Condensed", sans-serif;
                         cursor: pointer;
+                    }
+
+                    .filter_input {
+                        appearance: none;
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            width: 18px;
+                            height: 18px;
+                            border: 2px solid #ccc;
+                            border-radius: 4px;
+                            transition: all .2s ease;
+                        }
+
+
+                        &:checked {
+                            &::before {
+                                background-color: $black;
+                                border: 2px solid $black;
+                            }
+                        }
                     }
                 }
             }
