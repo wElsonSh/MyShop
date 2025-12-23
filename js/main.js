@@ -20,6 +20,16 @@ filter_inputs.forEach(element => {
         }
     })
 })
+all_filter_input.addEventListener("click", () => {
+    if (all_filter_input.checked === true) {
+        filter_inputs.forEach((element) => {
+            element.checked = false
+            checked_inpust_count = 0
+        })
+    } else if (all_filter_input.checked === false && checked_inpust_count === 0) {
+        all_filter_input.checked = true
+    }
+})
 
 
 document.addEventListener("DOMContentLoaded", () => {
