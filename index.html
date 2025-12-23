@@ -17,106 +17,118 @@
             </a>
             <input type="text" class='header_input' placeholder='Поиск в каталоге: '>
             <nav class='header_nav'>
+                <button class='header_nav_basket_btn'>
+                    <i class="fa-solid fa-basket-shopping"></i>
+                </button>
                 <button class='header_nav_user_btn'>
                     <i class="fa-solid fa-circle-user"></i>
                 </button>
             </nav>
         </div>
     </header>
+    <main class='wrapper'>
+        <aside class="sideBar">
+            <div class="sideBar_container">
+                <nav class="sideBar_nav">
+                    <div class='sideBar_nav_filter_all_input_container'>
+                        <label for="sideBar_nav_filter_all_input">
+                            <p>All</p>
+                        </label>
+                        <input type="checkbox" id='sideBar_nav_filter_all_input' class='sideBar_nav_filter_all_input'>
+                    </div>
+                    <ul class='sideBar_nav_list'>
+                        <h3>Название фильтра:</h3>
+                        <li class="sideBar_nav_list_item">
+                            <label for="filter_input_1">
+                                <p>some filter</p>
+                            </label>
+                            <input type="checkbox" id='filter_input_1' class='filter_input'>
+                        </li>
+                        <li class="sideBar_nav_list_item">
+                            <label for="filter_input_2">
+                                <p>some filter</p>
+                            </label>
+                            <input type="checkbox" id='filter_input_2' class='filter_input'>
+                        </li>
+                        <li class="sideBar_nav_list_item">
+                            <label for="filter_input_3">
+                                <p>some filter</p>
+                            </label>
+                            <input type="checkbox" id='filter_input_3' class='filter_input'>
+                        </li>
+                        <li class="sideBar_nav_list_item">
+                            <label for="filter_input_4">
+                                <p>some filter</p>
+                            </label>
+                            <input type="checkbox" id='filter_input_4' class='filter_input'>
+                        </li>
+                    </ul>
+                    <ul class='sideBar_nav_list'>
+                        <h3>Название фильтра:</h3>
+                        <li class="sideBar_nav_list_item">
+                            <label for="filter_input_5">
+                                <p>some filter</p>
+                            </label>
+                            <input type="checkbox" id='filter_input_5' class='filter_input'>
+                        </li>
+                        <li class="sideBar_nav_list_item">
+                            <label for="filter_input_6">
+                                <p>some filter</p>
+                            </label>
+                            <input type="checkbox" id='filter_input_6' class='filter_input'>
+                        </li>
+                        <li class="sideBar_nav_list_item">
+                            <label for="filter_input_7">
+                                <p>some filter</p>
+                            </label>
+                            <input type="checkbox" id='filter_input_7' class='filter_input'>
+                        </li>
+                        <li class="sideBar_nav_list_item">
+                            <label for="filter_input_8">
+                                <p>some filter</p>
+                            </label>
+                            <input type="checkbox" id='filter_input_8' class='filter_input'>
+                        </li>
+                    </ul>
+                    <ul class='sideBar_nav_list'>
+                        <h3>Название фильтра:</h3>
+                        <li class="sideBar_nav_list_item">
+                            <label for="filter_input_9">
+                                <p>some filter</p>
+                            </label>
+                            <input type="checkbox" id='filter_input_9' class='filter_input'>
+                        </li>
+                        <li class="sideBar_nav_list_item">
+                            <label for="filter_input_10">
+                                <p>some filter</p>
+                            </label>
+                            <input type="checkbox" id='filter_input_6' class='filter_input'>
+                        </li>
+                        <li class="sideBar_nav_list_item">
+                            <label for="filter_input_11">
+                                <p>some filter</p>
+                            </label>
+                            <input type="checkbox" id='filter_input_11' class='filter_input'>
+                        </li>
+                        <li class="sideBar_nav_list_item">
+                            <label for="filter_input_12">
+                                <p>some filter</p>
+                            </label>
+                            <input type="checkbox" id='filter_input_12' class='filter_input'>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
 
-    <aside class="sideBar">
-        <div class="sideBar_container">
-            <nav class="sideBar_nav">
-                <div class='sideBar_nav_filter_all_input_container'>
-                    <label for="sideBar_nav_filter_all_input">
-                        <p>All</p>
-                    </label>
-                    <input type="checkbox" id='sideBar_nav_filter_all_input' class='sideBar_nav_filter_all_input'>
-                </div>
-                <ul class='sideBar_nav_list'>
-                    <h3>Название фильтра:</h3>
-                    <li class="sideBar_nav_list_item">
-                        <label for="filter_input_1">
-                            <p>some filter</p>
-                        </label>
-                        <input type="checkbox" id='filter_input_1' class='filter_input'>
-                    </li>
-                    <li class="sideBar_nav_list_item">
-                        <label for="filter_input_2">
-                            <p>some filter</p>
-                        </label>
-                        <input type="checkbox" id='filter_input_2' class='filter_input'>
-                    </li>
-                    <li class="sideBar_nav_list_item">
-                        <label for="filter_input_3">
-                            <p>some filter</p>
-                        </label>
-                        <input type="checkbox" id='filter_input_3' class='filter_input'>
-                    </li>
-                    <li class="sideBar_nav_list_item">
-                        <label for="filter_input_4">
-                            <p>some filter</p>
-                        </label>
-                        <input type="checkbox" id='filter_input_4' class='filter_input'>
-                    </li>
+        <div class='assortment'>
+            <div class="assortment_container">
+                <ul class="assortment_products" id='assortment_products'>
+
                 </ul>
-                <ul class='sideBar_nav_list'>
-                    <h3>Название фильтра:</h3>
-                    <li class="sideBar_nav_list_item">
-                        <label for="filter_input_5">
-                            <p>some filter</p>
-                        </label>
-                        <input type="checkbox" id='filter_input_5' class='filter_input'>
-                    </li>
-                    <li class="sideBar_nav_list_item">
-                        <label for="filter_input_6">
-                            <p>some filter</p>
-                        </label>
-                        <input type="checkbox" id='filter_input_6' class='filter_input'>
-                    </li>
-                    <li class="sideBar_nav_list_item">
-                        <label for="filter_input_7">
-                            <p>some filter</p>
-                        </label>
-                        <input type="checkbox" id='filter_input_7' class='filter_input'>
-                    </li>
-                    <li class="sideBar_nav_list_item">
-                        <label for="filter_input_8">
-                            <p>some filter</p>
-                        </label>
-                        <input type="checkbox" id='filter_input_8' class='filter_input'>
-                    </li>
-                </ul>
-                <ul class='sideBar_nav_list'>
-                    <h3>Название фильтра:</h3>
-                    <li class="sideBar_nav_list_item">
-                        <label for="filter_input_9">
-                            <p>some filter</p>
-                        </label>
-                        <input type="checkbox" id='filter_input_9' class='filter_input'>
-                    </li>
-                    <li class="sideBar_nav_list_item">
-                        <label for="filter_input_10">
-                            <p>some filter</p>
-                        </label>
-                        <input type="checkbox" id='filter_input_6' class='filter_input'>
-                    </li>
-                    <li class="sideBar_nav_list_item">
-                        <label for="filter_input_11">
-                            <p>some filter</p>
-                        </label>
-                        <input type="checkbox" id='filter_input_11' class='filter_input'>
-                    </li>
-                    <li class="sideBar_nav_list_item">
-                        <label for="filter_input_12">
-                            <p>some filter</p>
-                        </label>
-                        <input type="checkbox" id='filter_input_12' class='filter_input'>
-                    </li>
-                </ul>
-            </nav>
+            </div>
         </div>
-    </aside>
+    </main>
 
     <script src="./js/main.js"></script>
     <script src="https://kit.fontawesome.com/bc49d41473.js" crossorigin="anonymous"></script>
