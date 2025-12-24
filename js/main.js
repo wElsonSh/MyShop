@@ -15,8 +15,12 @@ filter_inputs.forEach(element => {
         } else {
             alert("Error")
         }
-        if (checked_inpust_count === 0) {
+        if (checked_inpust_count === 0 || checked_inpust_count === filter_inputs.length) {
             all_filter_input.checked = true
+            filter_inputs.forEach((element) => {
+                element.checked = false
+                checked_inpust_count = 0
+            })
         }
     })
 })
@@ -53,6 +57,7 @@ products.forEach((product) => {
         , product_card_btn = document.createElement("button")
     product_card_container.classList.add("assortment_product_card_container")
     product_card_img.classList.add("assortment_product_card_img")
+    product_card_btn.classList.add("assortment_product_card_btn")
     product_card_title.textContent = `${product[0]} :`
     product_card_price.textContent = `$${product[1]}`
     product_card_btn.textContent = 'buy'
@@ -61,4 +66,31 @@ products.forEach((product) => {
     product_card.classList.add("assortment_product_card")
     assortment_products.appendChild(product_card)
 })
+
+const product_card_buy_btns = document.querySelectorAll(".assortment_product_card_btn")
+    , header_nav_basket_btn_span = document.getElementById("header_nav_basket_btn_span")
+let products_in_basket_count = 0
+
+function backet_checking() {
+    if (products_in_basket_count === 0) {
+        header_nav_basket_btn_span.classList.add("basket_empty")
+    } else if (products_in_basket_count !== 0) {
+        header_nav_basket_btn_span.classList.remove("basket_empty")
+        header_nav_basket_btn_span.textContent = `${products_in_basket_count}`
+    }
+}
+
+if (product_card_buy_btns) {
+    product_card_buy_btns.forEach(element => {
+        element.addEventListener("click", () => {
+            products_in_basket_count++
+            console.log(products_in_basket_count)
+            backet_checking()
+        })
+    })
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    backet_checking()
+});
 

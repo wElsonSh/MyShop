@@ -94,10 +94,34 @@ li {
   color: #111;
   transition: all 0.2s ease;
 }
+.header .header_container .header_nav .header_nav_basket_btn {
+  position: relative;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
 .header .header_container .header_nav .header_nav_basket_btn i {
   transform: scale(2);
   color: #111;
   transition: all 0.2s ease;
+}
+.header .header_container .header_nav .header_nav_basket_btn .header_nav_basket_btn_span {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #f75b2b;
+  border-radius: 50%;
+  right: -5px;
+  bottom: -5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  font-size: 0.6em;
+  color: #fff;
+  font-family: "Bebas Neue", sans-serif;
+}
+.header .header_container .header_nav .header_nav_basket_btn .basket_empty {
+  display: none;
 }
 
 .wrapper {
@@ -268,7 +292,7 @@ li {
   font-family: "Roboto Condensed", sans-serif;
   font-size: 1.2em;
 }
-.assortment .assortment_container .assortment_products .assortment_product_card button {
+.assortment .assortment_container .assortment_products .assortment_product_card .assortment_product_card_btn {
   width: 100%;
   height: fit-content;
   border: none;
@@ -282,13 +306,13 @@ li {
   border-radius: 10px;
   transition: all 0.2s ease;
 }
-.assortment .assortment_container .assortment_products .assortment_product_card button:hover {
+.assortment .assortment_container .assortment_products .assortment_product_card .assortment_product_card_btn:hover {
   background-color: #ada6e6;
   color: #fff;
   box-shadow: 5px 5px #7d70de;
   transform: translateY(-2px);
 }
-.assortment .assortment_container .assortment_products .assortment_product_card button:active {
+.assortment .assortment_container .assortment_products .assortment_product_card .assortment_product_card_btn:active {
   transform: translateY(2px);
   box-shadow: 3px 3px #7d70de;
 }

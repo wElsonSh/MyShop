@@ -108,10 +108,36 @@ li {
             }
 
             .header_nav_basket_btn {
+                position: relative;
+                padding: 0.5rem;
+                box-sizing: border-box;
+
                 i {
                     transform: scale(2);
                     color: $black;
                     transition: all .2s ease;
+                }
+
+                .header_nav_basket_btn_span {
+                    position: absolute;
+                    width: 15px;
+                    height: 15px;
+                    background-color: #f75b2b;
+                    border-radius: 50%;
+                    right: -5px;
+                    bottom: -5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    line-height: 0;
+                    font-size: 0.6em;
+                    color: #fff;
+                    font-family: "Bebas Neue", sans-serif;
+                }
+
+                .basket_empty {
+                    display: none;
                 }
             }
         }
@@ -313,7 +339,7 @@ li {
                     }
                 }
 
-                button {
+                .assortment_product_card_btn {
                     width: 100%;
                     height: fit-content;
                     border: none;
