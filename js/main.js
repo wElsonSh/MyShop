@@ -1,3 +1,24 @@
+// header_input logic
+const header_input = document.getElementById("header_input")
+
+const allowedSelector = ".header_input, .header_input_btn, .header_input_btn_icon, .header_input_btn_f";
+function handleBodyPointerDown(event) {
+    const allowed = event.target.closest(allowedSelector);
+    if (allowed) return;
+    header_input.value = "";
+    header_input.blur();
+    document.body.removeEventListener("pointerdown", handleBodyPointerDown, true);
+}
+
+header_input.addEventListener("focus", () => {
+    document.body.addEventListener("pointerdown", handleBodyPointerDown, true);
+})
+header_input.addEventListener("blur", () => {
+    document.body.removeEventListener("pointerdown", handleBodyPointerDown, true);
+})
+
+// header_input logic
+
 // filters logic
 
 const filter_inputs = document.querySelectorAll(".filter_input")

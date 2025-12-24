@@ -56,7 +56,15 @@ li {
   cursor: pointer;
   color: #111;
 }
-.header .header_container .header_input {
+.header .header_container .header_input_container {
+  width: fit-content;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+}
+.header .header_container .header_input_container .header_input {
   width: 35rem;
   height: 3rem;
   border: none;
@@ -70,8 +78,26 @@ li {
   font-family: "Roboto Condensed", sans-serif;
   transition: all 0.2s ease;
 }
-.header .header_container .header_input:focus {
-  background-color: #d7d3fa;
+.header .header_container .header_input_container .header_input:focus {
+  background-color: #ada6e6;
+  box-shadow: 5px 5px #7d70de;
+  transform: translateY(-2px);
+  color: #fff;
+}
+.header .header_container .header_input_container .header_input:focus + .header_input_btn {
+  color: #fff;
+  transform: translateY(-2px);
+}
+.header .header_container .header_input_container .header_input_btn {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  outline: none;
+  right: 0;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 .header .header_container .header_nav {
   width: fit-content;
@@ -88,6 +114,11 @@ li {
   background-color: transparent;
   border: none;
   outline: none;
+  transition: all 0.1s ease-in-out;
+}
+.header .header_container .header_nav .header_nav_user_btn:hover i,
+.header .header_container .header_nav .header_nav_basket_btn:hover i {
+  color: #555;
 }
 .header .header_container .header_nav .header_nav_user_btn i {
   transform: scale(3);
@@ -116,7 +147,7 @@ li {
   align-items: center;
   justify-content: center;
   line-height: 0;
-  font-size: 0.6em;
+  font-size: 0.8em;
   color: #fff;
   font-family: "Bebas Neue", sans-serif;
 }

@@ -62,22 +62,53 @@ li {
             color: $black;
         }
 
-        .header_input {
-            width: 35rem;
-            height: 3rem;
-            border: none;
-            outline: none;
-            background-color: #f1f1f1;
-            border-radius: 10px;
-            padding: 1rem 2rem;
+        .header_input_container {
+            width: fit-content;
+            height: 100%;
+            display: flex;
+            align-items: center;
             box-sizing: border-box;
-            color: $black;
-            font-size: 1em;
-            font-family: "Roboto Condensed", sans-serif;
-            transition: all .2s ease;
+            position: relative;
 
-            &:focus {
-                background-color: #d7d3fa;
+
+            .header_input {
+                width: 35rem;
+                height: 3rem;
+                border: none;
+                outline: none;
+                background-color: #f1f1f1;
+                border-radius: 10px;
+                padding: 1rem 2rem;
+                box-sizing: border-box;
+                color: $black;
+                font-size: 1em;
+                font-family: "Roboto Condensed", sans-serif;
+                transition: all .2s ease;
+
+                &:focus {
+                    background-color: #ada6e6;
+                    box-shadow: 5px 5px #7d70de;
+                    transform: translateY(-2px);
+                    color: #fff;
+                }
+
+                &:focus+.header_input_btn {
+                    color: #fff;
+                    transform: translateY(-2px);
+                }
+
+            }
+
+            .header_input_btn {
+                position: absolute;
+                width: 3rem;
+                height: 3rem;
+                border: none;
+                outline: none;
+                right: 0;
+                background-color: transparent;
+                cursor: pointer;
+                transition: all .2s ease;
             }
         }
 
@@ -96,6 +127,13 @@ li {
                 background-color: transparent;
                 border: none;
                 outline: none;
+                transition: all .1s ease-in-out;
+
+                &:hover {
+                    i {
+                        color: #555;
+                    }
+                }
 
             }
 
@@ -131,7 +169,7 @@ li {
                     justify-content: center;
 
                     line-height: 0;
-                    font-size: 0.6em;
+                    font-size: 0.8em;
                     color: #fff;
                     font-family: "Bebas Neue", sans-serif;
                 }
