@@ -84,13 +84,19 @@ if (product_card_buy_btns) {
     product_card_buy_btns.forEach(element => {
         element.addEventListener("click", () => {
             products_in_basket_count++
-            console.log(products_in_basket_count)
+            const basket_JSON = JSON.stringify(products_in_basket_count)
+            localStorage.setItem("products_basket_count", basket_JSON)
             backet_checking()
         })
     })
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    const basket_storage = localStorage.getItem("products_basket_count")
+    if (basket_storage) {
+        const basket_data = JSON.parse(basket_storage)
+        products_in_basket_count = basket_data
+    }
     backet_checking()
 });
 
