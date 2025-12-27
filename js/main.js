@@ -1,3 +1,5 @@
+const products = [['apple', 20], ['banana', 70], ['alksdmklasmlk', 0], ['slslslslsl', 20], ['bananvavavavaa', 20], [';aspjasnjk', 20], ['apple', 10], ['banana', 20], ['alksdmklasmlk', 20], ['slslslslsl', 20], ['bananvavavavaa', 20], [';aspjasnjk', 20], ['apple', 1000]]
+
 // header_input logic
 const header_input = document.getElementById("header_input")
 
@@ -10,12 +12,62 @@ function handleBodyPointerDown(event) {
     document.body.removeEventListener("pointerdown", handleBodyPointerDown, true);
 }
 
-header_input.addEventListener("focus", () => {
+header_input.addEventListener("focus", (event) => {
     document.body.addEventListener("pointerdown", handleBodyPointerDown, true);
 })
 header_input.addEventListener("blur", () => {
     document.body.removeEventListener("pointerdown", handleBodyPointerDown, true);
 })
+header_input.addEventListener("keydown", (event) => {
+    if (event.key === 'Enter') {
+        let input_trim_value = header_input.value.trim();
+        if (input_trim_value) {
+            alert(input_trim_value)
+            header_input.blur()
+            let products_arr = []
+            for (let i = 0; i < products.length; i++) {
+                if (products[i][0] == input_trim_value) {
+                    products_arr.push(products[i])
+                    handleRestartProducts(products_arr)
+                }
+            }
+            if (products_arr.length === 0) {
+                let assortment_products = document.getElementById("assortment_products")
+                assortment_products.innerHTML = "<div class='empty_products'><h1>Похоже ничего не найдено😓</h1></div> "
+            }
+
+        } else {
+            alert("Empty string")
+            header_input.value = ''
+        }
+    }
+})
+
+document.addEventListener("DOMContentLoaded", () => {
+    handleRestartProducts(products)
+});
+function handleRestartProducts(arr) {
+    let assortment_products = document.getElementById("assortment_products")
+    assortment_products.innerHTML = ''
+    arr.forEach((product) => {
+        let product_card = document.createElement("li")
+            , product_card_container = document.createElement("div")
+            , product_card_title = document.createElement("h3")
+            , product_card_price = document.createElement("p")
+            , product_card_img = document.createElement("span")
+            , product_card_btn = document.createElement("button")
+        product_card_container.classList.add("assortment_product_card_container")
+        product_card_img.classList.add("assortment_product_card_img")
+        product_card_btn.classList.add("assortment_product_card_btn")
+        product_card_title.textContent = `${product[0]} :`
+        product_card_price.textContent = `$${product[1]}`
+        product_card_btn.textContent = 'buy'
+        product_card_container.append(product_card_title, product_card_price)
+        product_card.append(product_card_img, product_card_container, product_card_btn)
+        product_card.classList.add("assortment_product_card")
+        assortment_products.appendChild(product_card)
+    })
+}
 
 // header_input logic
 
@@ -66,27 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // filters logic
-
-const products = [['apple', 10], ['banana', 20], ['alksdmklasmlk', 20], ['slslslslsl', 20], ['bananvavavavaa', 20], [';aspjasnjk', 20], ['apple', 10], ['banana', 20], ['alksdmklasmlk', 20], ['slslslslsl', 20], ['bananvavavavaa', 20], [';aspjasnjk', 20]]
-    , assortment_products = document.getElementById("assortment_products")
-products.forEach((product) => {
-    let product_card = document.createElement("li")
-        , product_card_container = document.createElement("div")
-        , product_card_title = document.createElement("h3")
-        , product_card_price = document.createElement("p")
-        , product_card_img = document.createElement("span")
-        , product_card_btn = document.createElement("button")
-    product_card_container.classList.add("assortment_product_card_container")
-    product_card_img.classList.add("assortment_product_card_img")
-    product_card_btn.classList.add("assortment_product_card_btn")
-    product_card_title.textContent = `${product[0]} :`
-    product_card_price.textContent = `$${product[1]}`
-    product_card_btn.textContent = 'buy'
-    product_card_container.append(product_card_title, product_card_price)
-    product_card.append(product_card_img, product_card_container, product_card_btn)
-    product_card.classList.add("assortment_product_card")
-    assortment_products.appendChild(product_card)
-})
 
 const product_card_buy_btns = document.querySelectorAll(".assortment_product_card_btn")
     , header_nav_basket_btn_span = document.getElementById("header_nav_basket_btn_span")
